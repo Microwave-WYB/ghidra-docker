@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  ghidra-server:
+    build:
+      context: .
+    ports:
+      - "13100:13100"
+      - "13101:13101"
+      - "13102:13102"
+    volumes:
+      - repos:/ghidra/repos
+    restart: unless-stopped
+    environment:
+      - JAVA_OPTS=-Xmx4g
+
+volumes:
+  repos:
