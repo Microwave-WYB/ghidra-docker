@@ -15,10 +15,6 @@ RUN wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghid
 # Create a directory to store repositories
 RUN mkdir -p /ghidra/repos
 
-# Copy server configuration
-COPY server.conf /ghidra/server/server.conf
-RUN chown -R ghidra:ghidra /ghidra
-
 USER ghidra
 EXPOSE 13100 13101 13102
 

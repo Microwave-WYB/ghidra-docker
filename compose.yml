@@ -10,6 +10,7 @@ services:
       - "13102:13102"
     volumes:
       - repos:/ghidra/repos
+      - server.conf:/ghidra/server/server.conf
     restart: unless-stopped
     environment:
       - JAVA_OPTS=-Xmx4g
